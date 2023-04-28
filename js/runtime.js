@@ -11,7 +11,7 @@ function createtime(){
 	var ho=new Date("05/27/2022 16:38:23"),hn=(now-ho)/1e3/60/60/24,hd=Math.floor(hn),hi=(now-ho)/1e3/60/60-24*hd,hh=Math.floor(hi);
 	1==String(hh).length&&(hh="0"+hh);
 	var dd=(now-ho)/1e3/60-1440*hd-60*hh,hf=Math.floor(dd);
-	1==String(l).length&&(l="0"+l);
+	1==String(hf).length&&(hf="0"+hf);
 	var gg=(now-ho)/1e3-86400*hd-3600*hh-60*hf,hs=Math.round(gg);
 	1==String(hs).length&&(hs="0"+hs);
 	let c="";
