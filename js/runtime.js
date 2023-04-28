@@ -3,8 +3,8 @@ function createtime(){
 	now.setTime(now.getTime()+1e3);
 	var e=new Date("04/26/2023 00:00:00"),t=Math.trunc(234e8+(now-e)/1e3*17),a=(t/1496e5).toFixed(6),o=new Date("04/26/2023 00:00:00"),n=(now-o)/1e3/60/60/24,r=Math.floor(n),i=(now-o)/1e3/60/60-24*r,s=Math.floor(i);
 	1==String(s).length&&(s="0"+s);
-	var ho=new Date("05/27/2022 00:00:00"),hn=(now-o)/1e3/60/60/24,hd=Math.floor(hn),hi=(now-o)/1e3/60/60-24*hd,hh=Math.floor(hi);
-	1==String(hh).length&&(hh="0"+s);
+	var ho=new Date("05/27/2022 00:00:00"),hn=(now-ho)/1e3/60/60/24,hd=Math.floor(hn),hi=(now-ho)/1e3/60/60-24*hd,hh=Math.floor(hi);
+	1==String(hh).length&&(hh="0"+hh);
 	var d=(now-o)/1e3/60-1440*r-60*s,l=Math.floor(d);
 	1==String(l).length&&(l="0"+l);
 	var g=(now-o)/1e3-86400*r-3600*s-60*l,b=Math.round(g);
