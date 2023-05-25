@@ -19,18 +19,18 @@ function createtime(){
 							本站居然运行了 ${r} 天 ${s} 小时 ${l} 分 ${b} 秒
 							<i id="heartbeat" class='fas fa-heartbeat'> 
 							</i> <br> 
-							现在是和Ta恋爱的第 ${hd} 天 ${hh} 小时 ${hf} 分 ${hs} 秒 
+							现在是和她恋爱的第 ${hd} 天 ${hh} 小时 ${hf} 分 ${hs} 秒 
 							<i id="gift" class='fas fa-gift'> 
 							</i> <br>
 							旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀
 
 							</div>`:`
 							<br> <div style="font-size:13px;font-weight:bold">
-							
+
 							本站居然运行了 ${r} 天 ${s} 小时 ${l} 分 ${b} 秒 
 							<i id="heartbeat" class='fas fa-heartbeat'>
 							</i> <br> 
-							现在是和Ta恋爱的第 ${hd} 天 ${hh} 小时 ${hf} 分 ${hs} 秒
+							现在是和她恋爱的第 ${hd} 天 ${hh} 小时 ${hf} 分 ${hs} 秒
 							<i id="gift" class='fas fa-gift'>
 							</i> <br>
 							旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀</div>`,document.getElementById("workboard")&&(document.getElementById("workboard").innerHTML=c)}setInterval((()=>{createtime()}),1e3);
