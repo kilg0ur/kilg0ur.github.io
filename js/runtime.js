@@ -32,7 +32,7 @@ function createtime(){
 							<i id="heartbeat" class='fas fa-heartbeat'>
 							</i> <br> 
 							今天是和Ta恋❤爱的第 ${hd} 天 ${hh} 小时 ${hs} 秒
-							<i id="heartbeat" class='fas fa-heartbeat'>
+							<i id="heartbeat" class='fas fa-gift'>
 							</i> <br>
 							旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀</div>`,document.getElementById("workboard")&&(document.getElementById("workboard").innerHTML=c)}setInterval((()=>{createtime()}),1e3);
 
