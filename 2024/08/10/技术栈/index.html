@@ -1,0 +1,594 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Kilgour Notes | Kilgour Notes</title><meta name="author" content="kilgour"><meta name="copyright" content="kilgour"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="委托事件反射 ADO和EF  MVC WinForm(膳御云台 2022.12-2023.5)主要模块构建WIn Form应用程序搭建了三层，并且将项目分为了如下几个模块： 1、会员管理模块   会员管理模块负责收集和管理会员信息，包括会员的消费记录和会员档案信息。  2、菜品类别模块   菜品类别模块管理菜品信息，包括菜品添加和删除，以及菜品分类。  3、库存管理模块   库存管理模块管理菜品库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kilgour Notes">
+<meta property="og:url" content="http://www.kilgour.top/2024/08/10/%E6%8A%80%E6%9C%AF%E6%A0%88/index.html">
+<meta property="og:site_name" content="Kilgour Notes">
+<meta property="og:description" content="委托事件反射 ADO和EF  MVC WinForm(膳御云台 2022.12-2023.5)主要模块构建WIn Form应用程序搭建了三层，并且将项目分为了如下几个模块： 1、会员管理模块   会员管理模块负责收集和管理会员信息，包括会员的消费记录和会员档案信息。  2、菜品类别模块   菜品类别模块管理菜品信息，包括菜品添加和删除，以及菜品分类。  3、库存管理模块   库存管理模块管理菜品库">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover3.jpg">
+<meta property="article:published_time" content="2024-08-10T15:15:38.544Z">
+<meta property="article:modified_time" content="2024-08-17T11:27:20.033Z">
+<meta property="article:author" content="kilgour">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover3.jpg"><link rel="shortcut icon" href="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/logo.png"><link rel="canonical" href="http://www.kilgour.top/2024/08/10/%E6%8A%80%E6%9C%AF%E6%A0%88/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Kilgour Notes',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-17 19:27:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/panarama.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/5.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover3.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Kilgour Notes"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/logo.png"/><span class="site-name">Kilgour Notes</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-10T15:15:38.544Z" title="发表于 2024-08-10 23:15:38">2024-08-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-17T11:27:20.033Z" title="更新于 2024-08-17 19:27:20">2024-08-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>委托事件反射</p>
+<p>ADO和EF  MVC</p>
+<h1 id="WinForm-膳御云台-2022-12-2023-5"><a href="#WinForm-膳御云台-2022-12-2023-5" class="headerlink" title="WinForm(膳御云台 2022.12-2023.5)"></a>WinForm(膳御云台 2022.12-2023.5)</h1><h2 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h2><p>构建WIn Form应用程序搭建了三层，并且将项目分为了如下几个模块：</p>
+<p>1、会员管理模块</p>
+<blockquote>
+<p> 会员管理模块负责收集和管理会员信息，包括会员的消费记录和会员档案信息。</p>
+</blockquote>
+<p>2、菜品类别模块</p>
+<blockquote>
+<p> 菜品类别模块管理菜品信息，包括菜品添加和删除，以及菜品分类。</p>
+</blockquote>
+<p>3、库存管理模块</p>
+<blockquote>
+<p> 库存管理模块管理菜品库存总数和日期管理，还负责菜品的采购退货，避免菜品缺货或品质不达标。</p>
+</blockquote>
+<p>4、订单管理模块</p>
+<blockquote>
+<p> 订单管理模块负责处理顾客的预定、点单、保存订单记录和历史订单查询。</p>
+</blockquote>
+<p>5、财务管理模块</p>
+<blockquote>
+<p>财务管理模块负责处理用户的结账、记录人员场地的开支、营销开支，制作每月报表和导出数据。</p>
+</blockquote>
+<p>6、营销管理模块</p>
+<blockquote>
+<p>营销管理模块根据市场情况和用户的历史消费记录制定营销计划，如优惠券、会员积分和会员促销活动。</p>
+</blockquote>
+<h2 id="我负责的模块"><a href="#我负责的模块" class="headerlink" title="我负责的模块"></a>我负责的模块</h2><p>会员管理模块、库存管理模块、订单管理模块</p>
+<h2 id="应用到的知识点"><a href="#应用到的知识点" class="headerlink" title="应用到的知识点"></a>应用到的知识点</h2><ol>
+<li><p>窗体传值</p>
+<blockquote>
+<p> 窗体传值简单来说就是拥有数据的窗体使用事件调用需要数据窗体的SetValue函数，将数据传给需要数据的窗体。比如说在顾客在加菜时，使用窗体传值将加菜窗体的详细信息传输到原本菜单的AddValue方法中完成商品数量、价格的计算。</p>
+</blockquote>
+</li>
+<li><p>窗体设计</p>
+<blockquote>
+<p>Visual Studio原本的空间组成的界面并不美观，因此采用第三方DevExpress进行窗体设计。熟练掌握imageList、menuStrip、comboBox和tabPages等控件的使用。</p>
+</blockquote>
+</li>
+<li><p>事件</p>
+<blockquote>
+<p>本项目中事件主要应用于窗体传值、异步事件处理和自定义事件：</p>
+<p>异步事件处理主要时避免加载商品列表或者导出大型报表时的UI冻结，提升用户体验。</p>
+<p>自定义事件，比如说在库存不足的时候触发警报事件提醒进货。</p>
+</blockquote>
+</li>
+<li><p>用户交互界面</p>
+<blockquote>
+<p>控件状态管理：在库存不足的时候禁用相关的购买按钮。</p>
+<p>弹出窗口和对话框管理：显示对话框以确认或提醒用户的操作，比如在提交订单的时候弹出提醒窗口。</p>
+</blockquote>
+</li>
+<li><p>线程</p>
+<blockquote>
+<p>后台工作线程：负责异步读取数据库的内容。  比如点击历史订单窗口，会自动创建后台线程读取数据库数据。</p>
+</blockquote>
+</li>
+<li><p>资源管理</p>
+<blockquote>
+<p>图片和图标管理：使用图像控件如imageList，存储餐厅品牌的商标、图片和菜品的实物图来装饰整个图形界面和展示菜品图片。</p>
+</blockquote>
+</li>
+<li><p>错误处理</p>
+<blockquote>
+<p>使用try-catch-finally来捕捉处理可能出现的异常，并确保资源的正确释放。</p>
+<p>自定义错误信息以保证用户更好的体验，如图片上传失败的时候提示自定义错误信息。</p>
+</blockquote>
+</li>
+<li><p>打印和报表</p>
+<blockquote>
+<p>提供打印预览效果,让用户在实际打印报表之前查看打印效和格式.</p>
+<p>使用printDocument类打印报表。</p>
+<p>报表生成和展示,生成月度销售报表\利润报表和库存报表,在系统中展示给客户.</p>
+</blockquote>
+</li>
+<li><p>性能优化</p>
+<blockquote>
+<p>内存优化：管理应用程序的内存使用，避免内存泄露、及时释放不再使用的资源。</p>
+<p>资源加载优化：优化资源加载速度，实现懒加载。比如只有用户点击详细菜品信息时才会展示菜品的所有实物图片。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="项目技术实现"><a href="#项目技术实现" class="headerlink" title="项目技术实现"></a>项目技术实现</h2><p>使用WinForm技术搭建三层实现需求，数据库使用SqlLite</p>
+<p>为保证用户体验，使用DevExpress优化图形界面，使其看起来更美观、进行自定义错误处理，使用户的使用难度降低。</p>
+<p>为用户提供模糊查询查找商品。</p>
+<p>采用NLog日志框架，保证第一时间解决用户的问题。</p>
+<p>为保证数据的一致性和窗体数据的连续性，使用窗体传值中的方法传值提升用户体验。</p>
+<h2 id="难点和解决方案"><a href="#难点和解决方案" class="headerlink" title="难点和解决方案"></a>难点和解决方案</h2><p>会员登录密码采用明文管理并不安全，本项目采用MD5进行加密存储。</p>
+<p>使用WinForm的printDocument打印报表并不能很好地满足需求，因此此报表地的导出采用NPOI，支持多种主流格式，如excel。</p>
+<h1 id="CMS-智链教育-2023-6-2023-12"><a href="#CMS-智链教育-2023-6-2023-12" class="headerlink" title="CMS(智链教育 2023.6-2023.12)"></a>CMS(智链教育 2023.6-2023.12)</h1><h2 id="主要模块-1"><a href="#主要模块-1" class="headerlink" title="主要模块"></a>主要模块</h2><ol>
+<li><p>用户管理模块：</p>
+<blockquote>
+<p><strong>用户注册与登录</strong>：支持学生、教师、管理员等不同角色的注册与登录，支持社交媒体登录。</p>
+<p><strong>用户角色与权限</strong>：定义不同用户角色（如学生、教师、管理员），并配置权限（如查看课程、提交作业、管理内容）。</p>
+<p><strong>用户信息管理</strong>：允许用户查看和更新个人信息，包括联系信息、头像、密码等。</p>
+<p><strong>账户安全</strong>：实现密码重置、账户锁定、登录记录等安全功能。</p>
+</blockquote>
+</li>
+<li><p>课程管理模块：</p>
+<blockquote>
+<p><strong>课程创建与编辑</strong>：教师和管理员可以创建和编辑课程信息，包括课程标题、描述、学习目标、教材等。</p>
+<p><strong>课程分类与标签</strong>：对课程进行分类和打标签，方便用户查找和过滤。</p>
+<p><strong>课程安排</strong>：设置课程的时间安排、学期安排和课程周期。</p>
+</blockquote>
+</li>
+<li><p>学习管理模块：</p>
+<blockquote>
+<p><strong>课程注册与选课</strong>：学生可以浏览课程并进行注册或选课。</p>
+<p><strong>学习进度跟踪</strong>：跟踪学生的学习进度，包括课程完成情况、作业提交情况等。</p>
+<p><strong>在线学习</strong>：提供在线学习功能，如视频课程、互动练习、在线测验等。</p>
+<p><strong>课程评价与反馈</strong>：学生可以对课程进行评价，教师可以查看和回复反馈。</p>
+</blockquote>
+</li>
+<li><p>作业与测验模块：</p>
+<blockquote>
+<p><strong>作业提交</strong>：允许学生在线提交作业，支持文件上传和文本输入。</p>
+<p><strong>作业评分与反馈</strong>：教师可以对作业进行评分并提供反馈，学生可以查看评分和反馈。</p>
+<p><strong>在线测验</strong>：创建和管理在线测验，自动评分并记录结果。</p>
+<p><strong>测验分析</strong>：生成测验结果报告和统计数据，以分析学生的学习效果。</p>
+</blockquote>
+</li>
+<li><p>资源管理模块：</p>
+<blockquote>
+<p><strong>教材和参考资料</strong>：上传和管理教材、课件、参考书籍等资源。</p>
+<p><strong>多媒体资源</strong>：管理视频、音频、图像等多媒体资源。</p>
+<p><strong>资源共享</strong>：允许教师和学生共享资源，设置访问权限。</p>
+</blockquote>
+</li>
+<li><p>论坛与讨论模块：</p>
+<blockquote>
+<p><strong>课程讨论区</strong>：为每门课程提供讨论区，供学生和教师交流和讨论问题。</p>
+<p><strong>问答系统</strong>：允许学生提出问题，教师或其他学生可以回答。</p>
+<p><strong>公告与通知</strong>：发布课程相关的公告和通知，及时传达重要信息。</p>
+</blockquote>
+</li>
+<li><p>统计与报表模块</p>
+<blockquote>
+<p><strong>学习数据分析</strong>：分析学生的学习数据，如完成率、成绩分布等。</p>
+<p><strong>课程报表</strong>：生成课程相关的统计报表，如课程注册情况、评价分析等。</p>
+<p><strong>财务报表</strong>：如果涉及收费课程，提供财务报表，如学费收入、退款记录等。</p>
+</blockquote>
+</li>
+<li><p>系统管理模块</p>
+<blockquote>
+<p><strong>用户管理</strong>：管理用户账户、角色和权限，进行用户数据维护。</p>
+<p><strong>内容管理</strong>：管理网站内容，如公告、新闻、博客等。</p>
+<p><strong>系统配置</strong>：设置系统参数，如课程设置、通知设置、邮件设置等。</p>
+<p><strong>数据备份与恢复</strong>：定期备份系统数据，支持数据恢复操作。</p>
+</blockquote>
+</li>
+<li><p>通知与消息模块</p>
+<blockquote>
+<p><strong>系统通知</strong>：向用户发送系统通知和重要信息。</p>
+<p><strong>消息中心</strong>：提供用户之间的消息功能，支持即时通讯。</p>
+<p><strong>邮件通知</strong>：发送电子邮件通知，如课程更新、作业截止提醒等。</p>
+</blockquote>
+</li>
+<li><p>SEO模块</p>
+<blockquote>
+<p><strong>关键词管理</strong>：允许设置和管理页面的关键词，以优化搜索引擎排名。</p>
+<p><strong>Meta 标签设置</strong>：支持设置页面的标题、描述、关键词等Meta标签。</p>
+<p><strong>站点地图生成</strong>：自动生成XML站点地图，帮助搜索引擎索引网站内容。</p>
+<p><strong>SEO 分析工具</strong>：集成SEO分析工具，提供页面优化建议和性能报告。</p>
+<p><strong>SEO 报告</strong>：生成SEO相关的分析报告和统计数据。</p>
+</blockquote>
+</li>
+<li><p>多语言模块</p>
+<blockquote>
+<p><strong>语言切换</strong>：支持用户在前端界面选择不同的语言。</p>
+<p><strong>语言管理</strong>：管理员可以添加、删除或修改支持的语言。</p>
+<p><strong>多语言用户界面</strong>：确保用户界面在不同语言下的一致性和可用性。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="我负责的模块-1"><a href="#我负责的模块-1" class="headerlink" title="我负责的模块"></a>我负责的模块</h2><p>用户管理模块、论坛与讨论模块、作业和测验模块、资源管理模块、通知与消息模块</p>
+<h2 id="知识点管理"><a href="#知识点管理" class="headerlink" title="知识点管理"></a>知识点管理</h2><p>本项目采用三层模式（仓储管理层、服务层、用户交互层）、SQLServer、RBAC、AutoMapper、Autofac、Filter、Razor视图、文件上传和下载、依赖注入、中间件、Linq、Quartz.net、Axios、EFCore、NLog、工作单元模式、Dto、HTTP、MediatR、JWT、FFmpeg等</p>
+<h2 id="项目技术实现-1"><a href="#项目技术实现-1" class="headerlink" title="项目技术实现"></a>项目技术实现</h2><p>使用三层架构进行开发有很多好处，如分离关注点：避免将数据访问、业务逻辑和用户界面揉在一起，可以降低耦合度并且使代码地结构更加清晰。</p>
+<p>使用EF Core这个ORM框架可以使用Linq语句，由EF Core转换成Sql语句简化数据库操作，并且EF Core还支持数据库迁移功能，意味着可以使用C#语言完成整套数据库操作，能够极大提升开发效率。</p>
+<p>使用Autofac依赖注入框架，引入容器管理对象，不需要手动创建对象，提升开发效率。</p>
+<p>使用NLog日志框架，记录完整日志，以便于后期维护。</p>
+<p>使用Dto和Auto Mapper映射对齐颗粒度，既可以达到不传输无用地数据，又可以给数据瘦身减缓数据传输的压力。</p>
+<p>使用Filter实现日志的统一记录、实现工作单元模式封装事务将多个数据库操作置于一个事务里实现数据库的一致性和正确性。</p>
+<p>使用Quartz.net定时框架实现月底实现月度流水报表的处理、收支情况分析等操作。</p>
+<p>使用Axios发送HTTP请求实现了数据的异步传输。</p>
+<p>文件上传和下载（IFormFile）实现报表的下载。</p>
+<p>使用JWT完成用户身份验证和功能使用授权。</p>
+<p>使用RBAC-基于角色的访问控制实现权限的管理。</p>
+<h2 id="难点和解决方案-1"><a href="#难点和解决方案-1" class="headerlink" title="难点和解决方案"></a>难点和解决方案</h2><ol>
+<li><p>性能优化</p>
+<ul>
+<li>难点：随着用户数量的增加，必然伴随着性能瓶颈。</li>
+<li>解决方案：使用缓存策略，使用Redis进行数据缓存、优化数据库查询。</li>
+</ul>
+</li>
+<li><p>安全性问题</p>
+<ul>
+<li>难点：网站用户的数据非常重要，务必保证数据安全。可能面临SQL注入、XSS攻击、CSRF攻击等安全威胁。</li>
+<li>解决方案：使用参数化查询防止SQL注入；对用户的输入进行过滤和验证防止XSS攻击；抛弃Cookie使用JWT验证登录。</li>
+</ul>
+</li>
+<li><p>敏感词过滤</p>
+<ul>
+<li>难点：在上课时间点课堂讨论是高并发场景，数据库查询压力瞬时变大，会加重数据库负载导致响应时间加长，不利于用户体验。</li>
+<li>解决方案：将敏感词加载到内存缓存中，这样在检查敏感词就可以直接在内存中进行，减少数据库访问，提升用户体验。</li>
+</ul>
+</li>
+<li><p>视频处理</p>
+<ul>
+<li>难点：视频文件通常会很大，上传和下载的时候会占用大量带宽。并且不同浏览器和移动设备支持的视频格式也有差异，需要保证能够在绝大多数设备上正常播放并且视频文件体积也不会很大。用户上传的视频的转码和存储可能会造成较大负载，影响服务器性能。</li>
+<li>解决方案：使用设备广泛支持并且性能方面也不错的H.264视频编码格式，在减小视频文件体积的同时保持较高的视频清晰度。采用分布式存储单独储存视频文件以保证于用户进行交互的业务服务器不会受到文件上传的影响。采用FFmpeg实现视频转码服务，实现高效的转码。</li>
+</ul>
+</li>
+<li><p>邮件处理</p>
+<ul>
+<li>难点：如何防止邮件被标记为垃圾邮件、如何保证邮件内容的安全性防止被第三方拦截、大量发送邮件可能会导致邮件服务器过载或延迟，影响邮件的及时送达。</li>
+<li>解决方案：使用成熟的邮件服务提供商。发送邮件队列管理系统(Redis)来处理大规模发送而任务，确保每个任务都能被及时处理送达。</li>
+</ul>
+</li>
+<li><p>图片处理</p>
+<ul>
+<li>难点：大量图片的存储和处理会对服务器造成空间压力和性能压力，影响服务器性能。图片的使用要比视频频繁的多，因此图片的压缩、上传、下载等操作会极大影响服务器的性能，尤其是在高并发的场景下。</li>
+<li>解决方案：和视频处理一样，使用分布式存储将图片文件处理分散到多个服务器上，减轻单个服务器的负担。并采用缓存策略，如内存缓存或者分布式缓存(Redis)，将常用的图片放入缓存里减少对数据库的访问，加快图片处理速度。对图片的上传和处理采用队列管理，避免并发操作使数据库数据出现错误，对图片的进行压缩，减小图片的体积，降低传输的资源消耗。</li>
+</ul>
+</li>
+<li><p>多用户协作</p>
+<ul>
+<li>难点：在多用户环境下，内容的并发编辑和权限管理比较复杂。</li>
+<li>解决方案：使用乐观锁，权限管理使用RBAC保证高效处理权限问题。</li>
+</ul>
+</li>
+</ol>
+<h1 id="WebApi-Vue-颐丰人力-2024-2-2024-8"><a href="#WebApi-Vue-颐丰人力-2024-2-2024-8" class="headerlink" title="WebApi + Vue(颐丰人力 2024.2-2024.8)"></a>WebApi + Vue(颐丰人力 2024.2-2024.8)</h1><h2 id="主要模块-2"><a href="#主要模块-2" class="headerlink" title="主要模块"></a>主要模块</h2><ol>
+<li><p>登录模块</p>
+<blockquote>
+<p><strong>用户认证</strong>：提供员工和管理员的登录功能，支持使用用户名和密码进行身份验证。</p>
+<p><strong>多重身份支持</strong>：支持不同角色（如普通员工、部门经理、管理员等）的登录，并根据角色分配相应的权限。</p>
+<p><strong>安全措施</strong>：</p>
+<ul>
+<li><strong>加密存储</strong>：密码应使用加密算法（如 bcrypt）进行加密存储，确保用户数据的安全性。</li>
+<li><strong>验证码</strong>：可选地加入验证码功能，防止恶意登录尝试。</li>
+<li><strong>账户锁定</strong>：在连续多次登录失败后，账户会暂时锁定一段时间，以防止暴力破解。</li>
+</ul>
+<p><strong>忘记密码</strong>：提供忘记密码功能，用户可以通过注册邮箱或手机号找回密码，支持发送重置密码链接或验证码。</p>
+<p><strong>注销功能</strong>：用户可以随时主动注销登录状态，确保账户安全。</p>
+<p><strong>登录日志</strong>：记录每次登录的时间、IP 地址、设备信息等，用于安全审计和追踪。</p>
+</blockquote>
+</li>
+<li><p>用户管理模块：</p>
+<blockquote>
+<p><strong>用户注册和登录</strong>：支持员工和管理员的注册、登录及身份验证。</p>
+<p><strong>权限管理</strong>：基于角色的权限分配，如管理员、普通员工、部门经理等。</p>
+<p><strong>用户信息管理</strong>：员工的个人信息管理，支持查看和更新个人资料。</p>
+</blockquote>
+</li>
+<li><p>员工档案管理模块：</p>
+<blockquote>
+<p><strong>员工信息维护</strong>：管理员工的基本信息，如姓名、工号、职位、部门、联系方式等。</p>
+<p><strong>历史档案管理</strong>：保存员工的工作经历、教育背景、培训记录等历史档案。</p>
+<p><strong>员工状态管理</strong>：管理员工的入职、在职、离职、休假等状态。</p>
+</blockquote>
+</li>
+<li><p>招聘管理模块：</p>
+<blockquote>
+<p><strong>招聘需求发布</strong>：各部门可提交招聘需求，管理员审核后发布招聘信息。</p>
+<p><strong>简历管理</strong>：接收、筛选应聘者简历，支持简历的分类、筛选、搜索等操作。</p>
+<p><strong>面试安排</strong>：组织面试流程，安排面试时间和面试官，并记录面试结果。</p>
+<p><strong>录用管理</strong>：记录应聘者的录用情况，自动生成入职流程。</p>
+</blockquote>
+</li>
+<li><p>考勤管理模块：</p>
+<blockquote>
+<p><strong>考勤打卡</strong>：支持员工日常打卡、请假申请和加班记录。</p>
+<p><strong>考勤记录管理</strong>：查看、统计和导出员工的考勤数据，包括迟到、早退、缺勤等情况。</p>
+<p><strong>休假管理</strong>：员工请假申请审批流程及休假天数管理。</p>
+</blockquote>
+</li>
+<li><p>薪酬管理模块：</p>
+<blockquote>
+<p><strong>薪资计算</strong>：根据员工的考勤、绩效、加班等数据自动计算月度薪资。</p>
+<p><strong>工资单管理</strong>：生成和发送员工工资单，支持工资单的查询和下载。</p>
+<p><strong>奖金和补贴管理</strong>：管理各类奖金、补贴的发放情况，记录发放历史。</p>
+</blockquote>
+</li>
+<li><p>绩效管理模块：</p>
+<blockquote>
+<p><strong>绩效目标设定</strong>：根据员工职位和部门设定绩效目标。</p>
+<p><strong>绩效考核</strong>：定期对员工的工作表现进行评估，记录考核结果。</p>
+<p><strong>绩效反馈</strong>：员工可查看自己的考核结果，并与上级进行反馈沟通。</p>
+</blockquote>
+</li>
+<li><p>培训与发展模块</p>
+<blockquote>
+<p><strong>培训计划管理</strong>：制定并发布企业内部的培训计划和课程。</p>
+<p><strong>培训报名与记录</strong>：员工可以在线报名参加培训，系统记录培训参与情况。</p>
+<p><strong>培训考核</strong>：对培训效果进行考核和反馈。</p>
+</blockquote>
+</li>
+<li><p>组织架构管理模块</p>
+<blockquote>
+<p><strong>部门管理</strong>：创建和管理公司内部的部门结构，支持部门增删改查。</p>
+<p><strong>职位管理</strong>：定义各部门的职位信息及对应的职责和要求。</p>
+<p><strong>组织图展示</strong>：可视化展示公司的组织架构和人员分布情况。</p>
+</blockquote>
+</li>
+<li><p>合同管理模块</p>
+<blockquote>
+<p><strong>劳动合同管理</strong>：创建、查看和管理员工的劳动合同，支持合同的续签和终止。</p>
+<p><strong>合同档案</strong>：存储和管理员工签署的合同文档，支持查询和下载。</p>
+</blockquote>
+</li>
+<li><p>系统设置与维护模块</p>
+<blockquote>
+<p><strong>基础数据配置</strong>：配置系统中的基础数据，如职位列表、工作地点、薪酬等级等。</p>
+<p><strong>日志管理</strong>：记录系统操作日志，便于审计和问题排查。</p>
+<p><strong>数据备份与恢复</strong>：定期备份系统数据，支持数据恢复操作。</p>
+</blockquote>
+</li>
+<li><p>报表与统计模块</p>
+<blockquote>
+<p><strong>员工报表</strong>：生成各类员工相关的报表，如员工信息汇总、离职率统计等。</p>
+<p><strong>薪资报表</strong>：生成薪资统计报表，如工资支出汇总、部门薪资对比等。</p>
+<p><strong>绩效报表</strong>：生成绩效考核相关的统计报表，帮助管理层做出决策。</p>
+</blockquote>
+</li>
+<li><p>通知与公告模块</p>
+<blockquote>
+<p><strong>公告发布</strong>：管理员可以发布公司公告，员工在登录后可以查看。</p>
+<p><strong>通知管理</strong>：发送重要通知到指定员工或部门，确保信息传达。</p>
+</blockquote>
+</li>
+<li><p>消息提醒模块</p>
+<blockquote>
+<p><strong>系统提醒</strong>：如考勤异常、合同到期、生日提醒等，发送提醒通知给相关人员。</p>
+<p><strong>邮件和短信通知</strong>：重要信息通过邮件或短信发送给员工，确保信息传达。</p>
+</blockquote>
+</li>
+<li><p>自助服务模块</p>
+<blockquote>
+<p><strong>信息查询</strong>：员工可以自助查询个人的考勤、工资、绩效等信息。</p>
+<p><strong>在线申请</strong>：员工可以在线提交请假、调岗、离职等申请。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="我负责的模块-2"><a href="#我负责的模块-2" class="headerlink" title="我负责的模块"></a>我负责的模块</h2><p>登录模块、用户管理模块、考勤管理模块、培训发展模块、合同管理模块、报表统计模块、消息提醒模块。</p>
+<h2 id="知识点管理-1"><a href="#知识点管理-1" class="headerlink" title="知识点管理"></a>知识点管理</h2><p>本项目采用三层模式（仓储管理层、服务层、用户交互层）、SQLServer、Vue CLi、Vue Router、Vuex、SPA、RBAC、AutoMapper、Autofac、Filter、文件上传和下载、JWT、数据塑形、依赖注入、中间件、Linq、Quartz.net、Axios、EFCore、NLog、工作单元模式、Dto、HTTP、FFmpeg、CORS、Element Plus、CaptchaGen等</p>
+<h2 id="项目技术实现-2"><a href="#项目技术实现-2" class="headerlink" title="项目技术实现"></a>项目技术实现</h2><p>前端使用Vue全家桶（Vue CLi、Vue Router、Vuex）构建前端的SPA（单页应用程序），不仅能减少服务器负载还能提升用户体验。</p>
+<p>后端则使用.Net Core Web Api开发采用Restful风格开发。</p>
+<p>使用RBAC-基于角色的控制访问管理权限。</p>
+<p>使用Auto Mapper、Dto以及数据塑形实现不同层次之间精细化的数据传输，不传输不接收无用数据，减轻传输负担。</p>
+<p>使用Autofac创建容器实现依赖注入。</p>
+<p>使用Filter完成统一的日志记录、实现工作单元模式进行事务提交、接收数据前的数据校验等。</p>
+<p>使用Axios完成异步操作实现不刷新页面的更新数据操作。</p>
+<p>使用EF Core这一ORM框架完成数据库模型创建和管理。</p>
+<p>使用CORS技术实现跨域资源共享。</p>
+<p>使用JWT-JSON Web Token实现无状态的、安全的登录。</p>
+<p>使用Element Plus第三方前端库完成前端的页面搭建。</p>
+<h2 id="难点和技术实现"><a href="#难点和技术实现" class="headerlink" title="难点和技术实现"></a>难点和技术实现</h2><ol>
+<li>安全性问题<ul>
+<li>难点：本网站只服务于本公司员工，为防止外来用户登录，实行严格的安全措施。</li>
+<li>解决方案：登录模块使用CaptchaGen生成验证码，防止恶意登录尝试；加入账户锁定功能，防止暴力破解：登录成功以后一段时间内使用JWT身份验证。</li>
+</ul>
+</li>
+<li>API设计与Readme文档<ul>
+<li>难点：设计风格一致、命名规范以及功能齐全的API接口。</li>
+<li>解决方案：采用Restful风格的命名规范、使用Swagger、Apifox进行API功能测试。</li>
+</ul>
+</li>
+<li>团队协作和代码版本管理<ul>
+<li>难点：在团队开发过程中保证责任划分、版本质量和一致性。</li>
+<li>解决方案：使用Git进行版本控制，保证不出版本不一致问题；实施代码审查，把控代码质量。</li>
+</ul>
+</li>
+<li>性能优化<ul>
+<li>难点：SPA应用第一次加载时间略长，对于用户的体验不好。</li>
+<li>解决方案：采用懒加载，代码分割等Vue特性；实施缓存策略存储经常使用的组件。</li>
+</ul>
+</li>
+<li>API权限的过滤<ul>
+<li>难点：随着项目的扩展，API方法的数量可能会急剧增加，如果每次都要管理员手动添加很可能会导致多加或者遗漏的问题。</li>
+<li>解决方案：在项目规划初期就划分好API的权限并整理为Excel，可以使用EP Plus导入到数据库中，在创建API的过程中自动读取数据库内容，完成API权限的自动添加。</li>
+</ul>
+</li>
+<li>数据库优化<ul>
+<li>难点：设计高效的数据库模式。</li>
+<li>解决方案：使用索引优化查询；定期检测和优化数据库性能。</li>
+</ul>
+</li>
+</ol>
+<p>​	</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://www.kilgour.top">kilgour</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.kilgour.top/2024/08/10/%E6%8A%80%E6%9C%AF%E6%A0%88/">http://www.kilgour.top/2024/08/10/%E6%8A%80%E6%9C%AF%E6%A0%88/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.kilgour.top" target="_blank">Kilgour Notes</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/08/13/%E8%80%81%E7%8E%8B-21%E3%80%81Redis/" title=""><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover11.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2024/08/02/%E8%80%81%E7%8E%8B-20%E3%80%81%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/" title=""><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/5.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">kilgour</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/kilg0ur"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WinForm-%E8%86%B3%E5%BE%A1%E4%BA%91%E5%8F%B0-2022-12-2023-5"><span class="toc-number">1.</span> <span class="toc-text">WinForm(膳御云台 2022.12-2023.5)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%A8%A1%E5%9D%97"><span class="toc-number">1.1.</span> <span class="toc-text">主要模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E8%B4%9F%E8%B4%A3%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">我负责的模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%88%B0%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.3.</span> <span class="toc-text">应用到的知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.4.</span> <span class="toc-text">项目技术实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%BE%E7%82%B9%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.5.</span> <span class="toc-text">难点和解决方案</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CMS-%E6%99%BA%E9%93%BE%E6%95%99%E8%82%B2-2023-6-2023-12"><span class="toc-number">2.</span> <span class="toc-text">CMS(智链教育 2023.6-2023.12)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%A8%A1%E5%9D%97-1"><span class="toc-number">2.1.</span> <span class="toc-text">主要模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E8%B4%9F%E8%B4%A3%E7%9A%84%E6%A8%A1%E5%9D%97-1"><span class="toc-number">2.2.</span> <span class="toc-text">我负责的模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%A1%E7%90%86"><span class="toc-number">2.3.</span> <span class="toc-text">知识点管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0-1"><span class="toc-number">2.4.</span> <span class="toc-text">项目技术实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%BE%E7%82%B9%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-1"><span class="toc-number">2.5.</span> <span class="toc-text">难点和解决方案</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WebApi-Vue-%E9%A2%90%E4%B8%B0%E4%BA%BA%E5%8A%9B-2024-2-2024-8"><span class="toc-number">3.</span> <span class="toc-text">WebApi + Vue(颐丰人力 2024.2-2024.8)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%A8%A1%E5%9D%97-2"><span class="toc-number">3.1.</span> <span class="toc-text">主要模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E8%B4%9F%E8%B4%A3%E7%9A%84%E6%A8%A1%E5%9D%97-2"><span class="toc-number">3.2.</span> <span class="toc-text">我负责的模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%A1%E7%90%86-1"><span class="toc-number">3.3.</span> <span class="toc-text">知识点管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0-2"><span class="toc-number">3.4.</span> <span class="toc-text">项目技术实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%BE%E7%82%B9%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.5.</span> <span class="toc-text">难点和技术实现</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By kilgour</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">2</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><!-- hexo injector body_end end --></body></html>

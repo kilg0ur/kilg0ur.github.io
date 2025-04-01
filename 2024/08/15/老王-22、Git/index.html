@@ -1,0 +1,629 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Kilgour Notes | Kilgour Notes</title><meta name="author" content="kilgour"><meta name="copyright" content="kilgour"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Git1、简介Git就是一个分布式版本的控制工具软件。 工具软件：实现指定功能的软件，比如，说到下载，想到的就是迅雷，说到聊天，微信与qq Git:可以管理软件开发项目中的源代码文件 版本控制：版本控制是一种记录文件内容变化，以便将来能够查阅特定版本修订情况的系统。版本控制其实最重要的是可以记录文件修改的历史记录，从而让用户能够查看历史版本，方便版本切换。  为什么需要版本控制？ 个人开发过渡到团">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kilgour Notes">
+<meta property="og:url" content="http://www.kilgour.top/2024/08/15/%E8%80%81%E7%8E%8B-22%E3%80%81Git/index.html">
+<meta property="og:site_name" content="Kilgour Notes">
+<meta property="og:description" content="Git1、简介Git就是一个分布式版本的控制工具软件。 工具软件：实现指定功能的软件，比如，说到下载，想到的就是迅雷，说到聊天，微信与qq Git:可以管理软件开发项目中的源代码文件 版本控制：版本控制是一种记录文件内容变化，以便将来能够查阅特定版本修订情况的系统。版本控制其实最重要的是可以记录文件修改的历史记录，从而让用户能够查看历史版本，方便版本切换。  为什么需要版本控制？ 个人开发过渡到团">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover2.jpg">
+<meta property="article:published_time" content="2024-08-15T02:01:42.955Z">
+<meta property="article:modified_time" content="2024-08-15T02:04:56.342Z">
+<meta property="article:author" content="kilgour">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover2.jpg"><link rel="shortcut icon" href="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/logo.png"><link rel="canonical" href="http://www.kilgour.top/2024/08/15/%E8%80%81%E7%8E%8B-22%E3%80%81Git/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Kilgour Notes',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-15 10:04:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/panarama.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/5.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover2.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Kilgour Notes"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/logo.png"/><span class="site-name">Kilgour Notes</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-15T02:01:42.955Z" title="发表于 2024-08-15 10:01:42">2024-08-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-15T02:04:56.342Z" title="更新于 2024-08-15 10:04:56">2024-08-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>23分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h1 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h1><p><code>Git</code>就是一个分布式版本的控制工具软件。</p>
+<p>工具软件：实现指定功能的软件，比如，说到下载，想到的就是迅雷，说到聊天，微信与<code>qq</code></p>
+<p><code>Git</code>:可以管理软件开发项目中的源代码文件</p>
+<p><code>版本控制</code>：版本控制是一种记录文件内容变化，以便将来能够查阅特定版本修订情况的系统。版本控制其实最重要的是可以记录文件修改的历史记录，从而让用户能够查看历史版本，方便版本切换。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002032.png"></p>
+<p>为什么需要版本控制？</p>
+<p>个人开发过渡到团队协作。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002237.png"></p>
+<p>本次课程会讲解如下内容：</p>
+<p><code>Git</code>安装</p>
+<p><code>Git </code>命令：讲解<code>git</code>中常用的命令</p>
+<p><code>Git</code>分支： 分支特性，分支创建，分支转换，分支合并，代码合并冲突解决</p>
+<p><code>GitHub</code>: 创建远程库，代码推送(<code>Push</code>)， 代码拉取(<code>Pull</code>) (由于网络的原因，会出现无法链接，或者是链接比较慢的情况)</p>
+<p><code>Gitee 码云</code>（服务器在国内，国内的<code>GitHub</code>）</p>
+<p><code>GitLab</code>(公司自己搭建的项目管理的服务器)</p>
+<p>官网：<code>https://git-scm.com/</code></p>
+<h1 id="2、版本控制介绍"><a href="#2、版本控制介绍" class="headerlink" title="2、版本控制介绍"></a>2、版本控制介绍</h1><p>（1）集中式版本控制工具</p>
+<p> <code>CVS,SVN,VSS</code></p>
+<p>集中化的般般控制系统诸如<code>CVS,SVN</code>等，都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的开发人员都通过客户端链接到这台服务器，获取最新的文件或者是提交更新。</p>
+<p>这种做法的好处，就是每个人都可以在一定程度上看到项目的其他人正在做些什么。而管理员也可以轻松掌握每个开发者的权限，并且管理一个集中化的版本控制系统，要远比在客户端上维护本地数据来得轻松容易。</p>
+<p>缺点是：中央服务器的单点故障。如果服务器宕机一小时，那么在这一小时内，谁都无法进行提交更新，也就无法协同工作。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002587.png"></p>
+<p>（2）分布式版本控制工具</p>
+<p>像<code>Git</code>这种分布式版本控制工具，客户端提取的不是最新版本的文件快照，而是把代码仓库完整的镜像下来（本地库）。这样任何一处协同工作用的文件发生故障，事后都可以使用其他客户端的本地仓库进行恢复，因为每个客户端的每一次文件提取操作，实际上都是一次对整个文件仓库的完整备份。</p>
+<p>分布式的版本控制系统出现以后，解决了集中式版本控制系统的缺陷：</p>
+<p>第一：服务器断网的情况下也可以进行开发（因为版本控制是在本地进行的）</p>
+<p>第二：每个客户端保存的也都是整个完整的项目（包含历史记录，更加安全）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002079.png"></p>
+<p>上图中缺少了一个“远程库”，代码最终会推送到远程库中</p>
+<h1 id="3、Git工作机制"><a href="#3、Git工作机制" class="headerlink" title="3、Git工作机制"></a>3、<code>Git</code>工作机制</h1><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002001.png"></p>
+<p>工作区：不是开发的<code>IDE</code>工具，指的是你所写的代码所存放的磁盘目录的位置</p>
+<p>暂存区：你需要让<code>Git</code>这个工具知道你的工作区中的代码文件，所以需要把工作区的代码文件添加到暂存区（暂存区中的代码是临时存储），这时候的代码是没有生成对应的历史版本的。暂存区中的代码是可以删除的</p>
+<p>本地库：将暂存区的代码提交到本地库中以后，代码就有了历史版本。（本地库中的代码是无法删除的）</p>
+<p><strong><code>Git</code>和代码托管中心</strong></p>
+<p>代码托管中心是基于网路服务器的远程代码仓库，我们一般称作为<code>远程库</code>。</p>
+<p>局域网：<code>GitLab</code></p>
+<p>互联网：<code>GitHub</code>(外网),  <code>Gitee码云</code>（国内网站）     </p>
+<p>我们可以将<code>本地库</code>中的代码推送到远程库中</p>
+<h1 id="4、Git安装"><a href="#4、Git安装" class="headerlink" title="4、Git安装"></a>4、<code>Git</code>安装</h1><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002197.png"></p>
+<p><code>Git Bash Here</code>:右击菜单出现命令菜单</p>
+<p><code>Git GUI Here</code>:表示图形化</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002303.png"></p>
+<p>这里确定是否将其安装到<code>Git</code>目录下面，这里直接单击<code>Next</code>按钮</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002958.png"></p>
+<p>这里选择默认编辑器来对<code>git</code>进行编辑，这里我们默认选择<code>Vim</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002746.png"></p>
+<p>以上窗口表示的是对一个新的库修改初始化分支的名字。</p>
+<p>第一个：让<code>Git</code>来决定</p>
+<p>第二个：自己进行修改</p>
+<p>如果选择了第一个分支的名字默认是<code>master</code>,这里一般不需要修改，主分支一般都是<code>master</code>，直接单击<code>Next</code>按钮就可以了。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002407.png"></p>
+<p>修改环境变量</p>
+<p>第一项：只在<code>Git Bash</code>客户端中使用<code>Git</code>,选择这一项不会修改环境变量</p>
+<p>第二项：不仅可以在<code>Git Bash</code>中使用<code>Git</code>,甚至可以在<code>windows</code>系统的<code>cmd</code>窗口中使用<code>Git</code>,所以这一项会修改环境变量</p>
+<p>第三项：不选</p>
+<p><strong>注意: 这里我们默认选择第一项</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002129.png"></p>
+<p>您希望git使用哪个安全的shell客户端程序</p>
+<p>这里我们就选第一项：使用<code>OpenSSH</code>进行链接</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151002313.png"></p>
+<p>以上表示的是：选择后台客户端所链接的协议，默认选择第一项</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003242.png"></p>
+<p>配置行尾符号转换。</p>
+<p>写完一行指令，需要换行。第一行与第二行之间的换行符</p>
+<p><code>windows</code>:<code>CRLF</code>:表示回车换行</p>
+<p><code>Linux</code>:<code>LF</code></p>
+<p>这里我们默认选择第一项，这时候<code>Git</code>会检查系统环境，如果是<code>windows</code>使用<code>CRLF</code>，而<code>Linux</code>使用<code>LF</code>。</p>
+<p>也就是自动转换换行符</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003890.png"></p>
+<p>选择客户端类型，这里默认选择第一项</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003295.png"></p>
+<p>如果将远程库中的代码，拉取到本地（<code>git pull</code> 就是获取最新的远程仓库分支到本地，并与本地分支合并），默认选择第一项。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003806.png"></p>
+<p>选择一个凭证帮助程序.</p>
+<p>如果使用<code>git</code>客户端拉取&#x2F;推送远程库中的代码，不可能每次都登录一下，通过这个凭证帮助程序，可以记录登录的行为。</p>
+<p>也就是第一次登录，后面就不需要登录了。</p>
+<p>这里选择第一项：表示的是选择<code>windows</code>的凭证管理（第一个选项是提供登录凭证帮助的，Git 有时需要用户的凭据才能执行操作；例如，可能需要输入用户名和密码才能通过 HTTP 访问远程存储库（<code>GitHub，GItLab </code>等等）。）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003194.png"></p>
+<p>以上是窗口表示的是其他的配置</p>
+<p>第一项：表示文件的缓存机制</p>
+<p>文件系统数据将大容量读取，并缓存在内存中以进行确定操作，这将大大提高性能</p>
+<p>第二项：启用符号链接 ，符号链接是一类特殊的文件， 其包含有一条以绝对路径或者相对路径的形式指向其它文件或者目录的引用，类似于 Windows 的快捷方式，不完全等同 类Unix（如 Linux） 下的 符号链接。因为该功能的支持需要一些条件，所以默认不开启。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003670.png"></p>
+<p>配置实验选项：这是实验性功能，可能会有一些小错误之类的，建议不用开启。</p>
+<p>最后单击<code>Install</code>按钮进行安装</p>
+<p>安装成功以后，在桌面右击，在弹出的快捷菜单中，会出现<code>Git GUI Here</code>和<code>Git Bash Here</code></p>
+<h1 id="5、设置用户签名"><a href="#5、设置用户签名" class="headerlink" title="5、设置用户签名"></a>5、设置用户签名</h1><p><code>git</code>中命令比较多，常用的命令如下所示：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003998.png"></p>
+<p>前两个命令是第一次使用<code>git</code>的时候，必须要设置用户签名，使用一次就可以了</p>
+<p>在桌面右击，从弹出的快捷菜单中选择<code>Git Bash Here</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003140.png"></p>
+<p>邮箱是可以设置一个虚拟的邮箱，也可以设置一个真实的邮箱</p>
+<p>怎样验证用户签名设置成功了呢？</p>
+<p>查看<code>c</code>盘，<code>C:\Users(用户)\wangc</code>(<code>wangc</code>表示当前电脑正在使用的用户名称，如上图所示)</p>
+<p>找到该目录下面的<code>.gitconfig</code>文件，使用记事本打开查看</p>
+<p>说明：签名的作用是区分不同的操作者身份。用户的签名信息在每一个版本的提交信息中能够看到，以此确认本次提交者是谁。</p>
+<p><code>Git</code>首次安装必须设置一下用户签名，否则无法提交代码</p>
+<p>注意：这里设置的用户签名和将来登录<code>GitHub</code>等其他代码托管中心的账号没有任何的关系。</p>
+<h1 id="6、初始化本地库"><a href="#6、初始化本地库" class="headerlink" title="6、初始化本地库"></a>6、初始化本地库</h1><p>基本语法：<code>git init</code></p>
+<p>所谓的初始化本地库：指的就是让<code>git</code>这个工具管理某个目录，你需要让<code>git</code>获取这个目录的管理权限。</p>
+<p>例如：<code>E:\netcore\Git\code\demo</code>这个目录就是项目目录，现在让<code>git</code>管理这个目录</p>
+<p>在该目录中右击，在弹出的快捷菜单中选择<code>Git Bash Here</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003121.png"></p>
+<p>这里执行了<code>git init</code>就会在当前的<code>e/netcore/Git/code/demo</code>目录下面创建一个<code>空的git</code>管理库</p>
+<p>在该目录下面会展示一个<code>.git</code>目录（注意：该目录默认是隐藏的），该目录下面的文件不能修改，否则无法使用<code>git</code></p>
+<h1 id="7、查看本地库状态"><a href="#7、查看本地库状态" class="headerlink" title="7、查看本地库状态"></a>7、查看本地库状态</h1><p>指令：<code> git status</code></p>
+<p>输出的内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">On branch master // 表示当前库是在master分支中</span><br><span class="line"></span><br><span class="line">No commits yet // 表示当前没有提交任何内容</span><br><span class="line"></span><br><span class="line">noting to commit // 没有任何需要提交的内容，因为当前项目目录中没有任何内容</span><br></pre></td></tr></table></figure>
+
+<p>下面可以直接输入<code>vim hello.txt</code></p>
+<p>使用<code>vim</code>编辑器创建<code>hello.txt</code>文件，并且可以在该文件中添加相应内容，相当于我们自己写的代码。</p>
+<p>也可以直接在项目目录中创建<code>hello.txt</code>文件，然后输入内容，表示自己写的代码</p>
+<p>这时候，可以通过<code>cat hello.txt</code>命令查看文件中的内容</p>
+<p>在<code>git</code>中的命令与<code>linux</code>命令是通用的。也就是可以输入<code>linux</code>命令</p>
+<p>这时候再输入<code>git status</code></p>
+<p>这时候展示的前两项内容是一样的，第三项内容是不一样的，现在表示的是：未被追踪的文件，<code>hello.txt</code>文件名是红色的，表示该文件只是存放在工作区，还没有被<code>git</code>追踪到。</p>
+<p>怎样被追踪呢？就是通过<code>git add</code>命令添加到暂存区就可以了。</p>
+<h1 id="8、添加暂存区"><a href="#8、添加暂存区" class="headerlink" title="8、添加暂存区"></a>8、添加暂存区</h1><p>怎样将本地的文件添加到暂存区呢？</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003252.png"></p>
+<p>查看状态后，<code>hello.txt</code>文件名变成了绿色，表示<code>git</code>追踪到了这个文件，这时候<code>hello.txt</code>这个文件只是存储在暂存区中。</p>
+<p>前面我们讲解过，暂存区中的文件是可以删除掉的，也就是说，不想让<code>hello.txt</code>这个文件保存一个历史版本。</p>
+<p>删除的方式，就是上图中给出的<code>git rm</code>指令</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003876.png"></p>
+<p>这时候，仅仅是将<code>hello.txt</code>这个文件从暂存区中删除掉了。工作区中还是有该文件的。</p>
+<p>这里可以重新执行<code>git status</code>查看状态。</p>
+<p>这里我们重新执行<code>git add hello.txt</code>命令，将<code>hello.txt</code>文件重新添加到暂存区中，方便后续的测试</p>
+<h1 id="9、提交本地库"><a href="#9、提交本地库" class="headerlink" title="9、提交本地库"></a>9、提交本地库</h1><p>可以将暂存区的文件提交到本地库，从而生成历史版本</p>
+<p>基本语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;日志信息&quot;</span>  文件名</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;第一次提交&quot;</span> hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>执行完以上的命令以后，查看状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>得到的结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">On branch master //  表示当前库是在master分支中</span><br><span class="line">nothing to commit, working tree clean // 表示已经提交过，并且提交过以后，对应的文件没有发生变化，工作树是干净的，不需要在提交</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这里缺少了<code>No commits yet</code>,因为现在已经提交本地库了，有自己的版本信息了，所以少了这行信息。</p>
+<p>这里可以执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>查看当前提交的引用日志信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ada8916 (HEAD -&gt; master) HEAD@&#123;0&#125;: commit (initial): 第一次提交</span><br><span class="line">版本号（只展示了前七位）   当前指针指向了master分支                      版本</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<p>查询详细的日志信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">commit ada8916bab94f7181caa1c839f535b605b05d383 (HEAD -&gt; master)  // 完整的版本号</span><br><span class="line">Author: wcw &lt;wcw@126.com&gt;  // 用户签名</span><br><span class="line">Date:   Tue Jun 20 10:04:12 2023 +0800</span><br><span class="line"></span><br><span class="line">    第一次提交</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="10、修改文件"><a href="#10、修改文件" class="headerlink" title="10、修改文件"></a>10、修改文件</h1><p>修改<code>hell.txt</code>文件，表示代码修改了，看一下对应的状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>这时候，发现文件修改以后，文件名变成了红色，表示没有被添加到暂存区。</p>
+<p>需要再次添加到暂存区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>再次提交到本地库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;第二次提交&quot;</span> hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>可以看到两个版本信息</p>
+<p>同时，可以看到指针指向了第二个版本</p>
+<p>如果，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>查看的就是修改后的内容，也就是第二个版本的信息。</p>
+<h1 id="11、版本穿梭"><a href="#11、版本穿梭" class="headerlink" title="11、版本穿梭"></a>11、版本穿梭</h1><p>如果想返回到以前的某个版本，可以使用版本穿梭</p>
+<p>命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 版本号</span><br></pre></td></tr></table></figure>
+
+<p>可以通过<code>git reflog</code>命令查看版本号</p>
+<p>执行完<code>git reset</code>版本穿梭命令以后，可以再次执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>查看到的信息如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ada8916 (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to ada8916 // 这里表示了一次指针移动的操作</span><br><span class="line">02c0cc6 HEAD@&#123;1&#125;: commit: 第二次提交</span><br><span class="line">ada8916 (HEAD -&gt; master) HEAD@&#123;2&#125;: commit (initial): 第一次提交 // 指针指向了第一个版本</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>查看文件中的内容，发现是第一个版本中的内容。</p>
+<p>这里，也可以找到项目目录中的<code>hello.txt</code>文件，打开该文件，发现内容做了修改。</p>
+<p>同时，可以看一下项目目录下面的<code>.git</code>文件夹中的<code>HEAD</code>文件，使用记事本打开该文件，可以看到，指针指向的就是<code>master</code>分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ref: refs/heads/master</span><br></pre></td></tr></table></figure>
+
+<p>同时，在查看<code>.git</code>下面的<code>refs</code>文件夹中的<code>heads</code>文件夹中的<code>master</code>文件，该文件中记录的就是第一次提交的版本号。</p>
+<p>当然，这里如果我们想再次返回到最新版本也是没有问题的。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003195.png"></p>
+<p><code>head</code>指针指向了<code>master</code>分支，然后指向了第一个版本。</p>
+<p>如果现在又有一个新的版本，如下图所示：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003424.png"></p>
+<h1 id="12、分支概述"><a href="#12、分支概述" class="headerlink" title="12、分支概述"></a>12、分支概述</h1><p><strong>什么是分支</strong></p>
+<p>在版本控制过程中，同时推进多个任务，为每个任务我们就可以创建每个任务的单独分支。使用分支意味着开发人员可以把自己的工作从开发主线上分离开来，开发自己分支的时候，不会影响主分支的运行。对于初学者来说，分支可以简单的理解成就是副本，一个分支就是一个单独的副本。（分支底层其实也是指针的引用）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003212.png"></p>
+<p><code>master</code>是主分支</p>
+<p>第一个开发人员开发了一个模块，创建了<code>feature-blue</code>分支，在该分支上进行开发，经过测试发现没有问题，就可以合并到<code>master</code>分支上，如果合并后有问题，可以在创建一个<code>hot-fix</code>分支进行修复，没有问题了再合并到<code>master</code>分支上。</p>
+<p>第二个开发人员，开发了另外一个模块，这时候可以创建一个<code>feature-game</code>分支，在该分支上进行开发测试，也是经过了多个版本，发现没有问题了，最终合并到<code>master</code>分支上。</p>
+<p>分支的好处：</p>
+<p>第一：同时并行推进多个功能开发，提高开发效率</p>
+<p>第二：各个分支在开发的过程中，如果某一个分支开发失败，不会对其他分支造成任何的影响。失败的分支删除重新开始就可以了。</p>
+<h1 id="13、分支的查看、创建、切换"><a href="#13、分支的查看、创建、切换" class="headerlink" title="13、分支的查看、创建、切换"></a>13、分支的查看、创建、切换</h1><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003458.png"></p>
+<p><strong>查看分支</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -v</span><br></pre></td></tr></table></figure>
+
+<p>创建分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch hot-fix  // 创建hot-fix分支</span><br><span class="line">git branch -v // 创建完分支以后，进行查看分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>虽然现在创建了<code>hot-fix</code>分支，但是通过如下的提示信息，我们知道当前所在的分支还是<code>master</code>分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wangc@wcw MINGW64 /e/netcore/Git/code/demo (master)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果想切换到<code>hot-fix</code>这个分支，可以通过如下的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout hot-fix  // 切换到hot-fix分支</span><br></pre></td></tr></table></figure>
+
+<p>切换到<code>hot-fix</code>这个分支以后，可以对代码文件进行修改</p>
+<p>修改完<code>hello.txt</code>这个文件以后，执行<code>git status</code>查看状态</p>
+<p>这时候，我们发现<code>hello.txt</code>这个文件名是<code>红色的</code>，需要提交到暂存区</p>
+<p>执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>执行完以上命令以后，可以再次执行<code>git status</code>查看状态</p>
+<p>下面可以提交到本地库中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;hot-fix 第一次提交&quot;</span> hello.txt</span><br></pre></td></tr></table></figure>
+
+<h1 id="14、合并分支"><a href="#14、合并分支" class="headerlink" title="14、合并分支"></a>14、合并分支</h1><p>现在，我们再切换<code>master</code>分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后查看<code>hello.txt</code>文件中的内容</p>
+<p>发现内容还是原来的内容，并没有将<code>hot-fix</code>分支中修改的内容合并过来。</p>
+<p>下面，我们看一下怎样进行合并。</p>
+<p>语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merage 分支名</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003761.png"></p>
+<p>首先，当前所在的是<code>master</code>分支上，这样就将<code>hot-fix</code>分支合并到了<code>master</code>分支上。</p>
+<p>合并成功以后，查看<code>hello.txt</code>文件中的代码</p>
+<h1 id="15、冲突合并"><a href="#15、冲突合并" class="headerlink" title="15、冲突合并"></a>15、冲突合并</h1><p>在进行代码合并的时候，可能会出现冲突的问题</p>
+<p>导致产生冲突的原因:</p>
+<p>合并分支的时候，两个分支在<strong>同一个文件的同一个位置</strong>有两套完全不同的修改，从而导致<code>Git</code>无法替我们决定使用哪一个修改。这时候必须<strong>人为决定</strong>新代码的内容</p>
+<p>下面我们来看一下出现冲突以后，怎样进行解决</p>
+<p>首先在<code>master</code>这个分支上修改<code>hello.txt</code>文件中的内容，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello git 22222</span><br><span class="line">hello world master test // 添加了master test</span><br></pre></td></tr></table></figure>
+
+<p>内容修改完成以后，将其添加到暂存区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>然后进行提交到本地库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;master test&quot;</span> hello.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>下面切换到<code>hot-fix</code>这个分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout hot-fix</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在这个分支下面修改<code>hello.txt</code>文件中的内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello git 22222</span><br><span class="line">hello world hot-fix test</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>添加到暂存区</p>
+<p>然后进行提交</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;hot-fix test&quot;</span> hello.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>提交完成以后，切换到<code>master</code>分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+
+<p>切换到<code>master</code>分支以后，进行合并</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git merge hot-fix</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>出现了如下的提示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Auto-merging hello.txt</span><br><span class="line">CONFLICT (content): Merge conflict in hello.txt // 在hello.txt中有代码的冲突</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.// 自动合并失败</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这时候在执行<code>git status</code>查看状态，看一下对应的提示信息</p>
+<p>下面我们使用记事本打开<code>hell.txt</code>文件，该文件中的内容是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hello git 22222 </span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD  // 表示当前的分支</span><br><span class="line">hello world master test</span><br><span class="line">=======  // 以上是当前分支中的代码，下面是当前合并的代码</span><br><span class="line">hello world hot-fix test</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; hot-fix</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这里只能进行手动的修改，修改成如下的形式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hello git 22222</span><br><span class="line">hello world master test</span><br><span class="line">hello world hot-fix test</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>因为这里，我们希望两个分支的内容都保存。</p>
+<p>然后在执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>添加到暂存区</p>
+<p>下面进行提交，提交到本地库中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;merge hot-fix&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：这里没有写文件名，如果写上文件名会出现错误，也就是以下写法是错误的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;merge hot-fix&quot;</span> hello.txt // 错误的写法，这里不能带上文件名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>以上就是手动解决了冲突合并的问题。</p>
+<h1 id="16、团队协作机制"><a href="#16、团队协作机制" class="headerlink" title="16、团队协作机制"></a>16、团队协作机制</h1><p>前面关于<code>git</code>的演示都是在本地，但是我们知道它是分布式的管理工具，这样可以进行团队协作。</p>
+<p>如果要进行团队的协作，就需要使用到代码托管中心。</p>
+<p>关于团队协作：分为团队内协作和跨团队协作</p>
+<p>下面我们先来看一下<strong>团队内协作</strong>的机制，如下图所示：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003931.png"></p>
+<p><code>A</code>是开发经理，他搭建了一个项目的架构，放在了<code>git</code>的本地库中，下面他可以将本地库中的<code>文件``push</code>（推送）到代码托管中心中，下面开发人员<code>B</code>可以将代码托管中心（远程库）中的文件<code>clone(克隆)</code>到本地库中，也就是复制到本地库中，开发人员B就可以修改代码，修改完以后，可以再次<code>push</code>到代码托管中心（但是这里需要注意的一点就是，开发人员B需要具有一定的权限，也就是必须加入到当前的团队中）</p>
+<p>项目经理<code>A</code>可以再次把代码托管中心中的文件<code>pull</code>(拉取)到本地库中。</p>
+<p>这样开发人员<code>A</code>的本地库，代码托管中心，开发人员<code>B</code>的本地库中的代码版本都是一样的。</p>
+<p><strong>跨团队协作</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003134.png"></p>
+<p>假设团队<code>A</code>中的开发人员1，开发了一个项目，然后推送到远程库中了，团队<code>B</code>中的开发人员3，把开发人员1的项目<code>fork</code>（叉开）过来，然后<code>clone</code>到本地库中，开发人员3在本地库中进行开发，然后<code>push</code>推送到远程库中，这时候会向<code>开发人员1</code>发送一个<code>pull request</code>请求（拉取的请求），开发人员1，接收到请求以后，进行审核，发现没有问题了，在<code>merge</code>合并到开发人员1，创建的远程库中，然后在<code>pull</code>拉取到本地库中。</p>
+<h1 id="17、创建远程库"><a href="#17、创建远程库" class="headerlink" title="17、创建远程库"></a>17、创建远程库</h1><p><code>https://github.com/</code></p>
+<p>进行注册登录</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151003818.png"></p>
+<p>这里选择加号，在弹出的菜单中选择<code>New repository</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004723.png"></p>
+<p>单击上图中的创建仓库的按钮以后，进入如下界面</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004695.png"></p>
+<p>以上地址就是远程库的地址。</p>
+<p>这里我们先将该地址赋值到记事本中，方便后面的操作。</p>
+<p>下面我们创建一个<strong>远程库的别名</strong></p>
+<p>所谓创建远程库的别名：指的就是上面的远程库地址太长了，不方便记忆，所以为了好记忆，可以为其创建一个简单的别名，方便记忆。</p>
+<p>如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add demo https://github.com/wcw324/demo.git</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>通过<code>git remote add </code>命令来创建别名，<code>demo</code>就是别名，一般我们也是以本地库的名字进行命名。后面跟的就是远程库的地址。</p>
+<p>创建好远程库以后，我们可以通过如下命令来查看创建好的别名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>展示的内容如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">demo    https://github.com/wcw324/demo.git (fetch)</span><br><span class="line">demo    https://github.com/wcw324/demo.git (push)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>展示了两个，因为可以推送，也可以拉取。</p>
+<h1 id="18、推送本地库到远程库"><a href="#18、推送本地库到远程库" class="headerlink" title="18、推送本地库到远程库"></a>18、推送本地库到远程库</h1><p>在上一小节中，我们创建好了远程库，但是远程库中没有任何的内容，这里我们可以把本地库中的文件推送到远程库中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git  push 别名(远程库地址) 分支</span><br></pre></td></tr></table></figure>
+
+<p>将本地库中指定的分支推送到远程库中</p>
+<p>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push demo master</span><br></pre></td></tr></table></figure>
+
+<p>将本地库中的<code>master</code>分支中的内容，推送到远程库中（别名是<code>demo</code>）</p>
+<p>一定要注意：这里你必须要明确是将本地库的哪个分支推送到远程库中。如果你想将<code>master</code>分支推送到远程库中，但是当前不是<code>master</code>分支，就需要</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名</span><br></pre></td></tr></table></figure>
+
+<p>切换到指定的分支下面</p>
+<p>在推送的过程中，可能比较慢，因为服务器是国外的服务器。</p>
+<p>如果一次推送不成功，多尝试几次。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004415.png"></p>
+<p>在弹出以上窗口以后，可以选择以什么方式登录远程库。</p>
+<p>这里可以选择使用浏览器，也可以选择使用账号。</p>
+<p>当然，现在浏览器中已经打开了<code>github</code>，所以选择第一项就可以了。</p>
+<p>当然，这里还需要再次进行身份的验证</p>
+<p>刷新远程地址的页面，或者是</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004258.png"></p>
+<p>单击左上角的按钮，会弹出如下页面</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004196.png"></p>
+<p>被红色线圈起来的链接，就可以查看到所推送过来的文件内容。</p>
+<h1 id="19、拉取远程库到本地库"><a href="#19、拉取远程库到本地库" class="headerlink" title="19、拉取远程库到本地库"></a>19、拉取远程库到本地库</h1><p>如果远程库中的代码修改了，这样就会导致你本地库与远程库中的代码不同步，这时候，可以将远程库中的代码拉取到本地（例如：团队中某个开发人员，修改了代码，你可以拉取到本地。）</p>
+<p>这里为了方便测试，这里我们在<code>github</code>中，打开<code>hello.txt</code>文件，随意输入点内容，表示修改了代码。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004043.png"></p>
+<p>单击上图中的编辑按钮，完成了信息的编辑以后，将其提交到对应的分支。</p>
+<p>下面看一下拉取操作指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull 别名 分支名</span><br></pre></td></tr></table></figure>
+
+<p>当前，我们执行的拉取指令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull demo master</span><br></pre></td></tr></table></figure>
+
+<h1 id="20、克隆远程库到本地"><a href="#20、克隆远程库到本地" class="headerlink" title="20、克隆远程库到本地"></a>20、克隆远程库到本地</h1><p>如果你是一个新开发人员（假设就叫做张三），加入了一个新的团队，现在需要将远程库中的项目克隆到本地。</p>
+<p>这里为了演示，我们在<code>D</code>盘中重新创建一个新的文件,假设叫做<code>mydemo</code>，作为从远程库中克隆的项目目录。</p>
+<p>克隆的指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 远程库地址</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004797.png"></p>
+<p>在<code>mydemo</code>目录中，启动<code>git 客户端</code>，输入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/wcw324/demo.git</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在克隆的时候，不需要登录，因为我们在创建<code>demo</code>库的时候，创建的是公共权限(<code>public</code>)</p>
+<p>克隆完成以后，在<code>mydemo</code>目录下面会创建一个<code>demo</code>文件夹，同时在<code>demo</code>文件夹中有<code>.git</code>文件夹。</p>
+<p>所以，克隆实际上会完成如下操作</p>
+<p>第一：拉取代码</p>
+<p>第二：初始化本地仓库</p>
+<p>第三：创建别名</p>
+<p>这里我们可以看一下所创建的别名</p>
+<p><strong>这里我们需要先<code>**cd demo**</code>,有<code>mydemo</code>目录进入<code>demo</code>目录。</strong></p>
+<p>然后再执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这时候，呈现出的结果是：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004032.png"></p>
+<p>这里的别名是<code>origin</code></p>
+<h1 id="21、团队协作"><a href="#21、团队协作" class="headerlink" title="21、团队协作"></a>21、团队协作</h1><p>在上一小节中，张三这个开发人员从远程库中克隆了对应的项目。</p>
+<p>下面张三就可以取修改代码或者是编写新的业务代码。</p>
+<p>代码编写完了以后（修改了<code>hello.txt</code>文件中的内容），最终需要重新提交到远程库中</p>
+<p>注意：这里是针对的<code>mydemo</code>目录下的<code>demo</code>目录进行操作。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004896.png"></p>
+<p>首先先将修改的<code>hello.txt</code>文件添加到暂存区</p>
+<p>然后，在通过<code>git commit</code>命令将其提交到本地库中。</p>
+<p>下面就可以考虑将本地库中的代码文件提交到远程库中了。</p>
+<p>但是，有一个问题是，张三这个开发人员，并不属于我们的团队。</p>
+<p>所以，我们需要在<code>GitHub</code>这个远程库中，把张三这个账号添加到我们团队中。(当前在<code>github</code>上登录的是<code>wcw324</code>这个账号，该账号就是当前我们团队的管理员)</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004591.png"></p>
+<p>单击上图中的<code>Settings</code>这个菜单</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004819.png"></p>
+<p>单击左侧菜单中的<code>Collaborators</code>菜单，然后在右侧页面中单击<code>Add People</code>按钮来完成团队成员的添加。（为了做测试，在<code>github</code>上注册了一个新的账号）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004037.png"></p>
+<p>在上面的搜索框中输入张三的账号</p>
+<p>这里是<code>zhangsan324</code></p>
+<p>将其添加到当前<code>wcw324</code>这个开发人员所在的团队。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004903.png"></p>
+<p>在上图中，单击红色线条圈起来的矩形框，获取对应的凭证。</p>
+<p>把获取到的凭证以后，先拷贝到记事本中（方便后面测试）。</p>
+<p>在公司中我们可以把上面的凭证发送给张三。</p>
+<p>张三需要登录自己的<code>github</code>账号（这里单机演示的时候，需要打开另外一个浏览器进行演示，例如<code>Edge</code>）</p>
+<p>张三只需要在浏览器中输入发过来的凭证，敲一下回车键，会打开如下页面。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004596.png"></p>
+<p>这时候，单击上图中的<code>Accept</code>按钮进行接受。</p>
+<p><code>Decline</code>按钮表示的<code>婉拒</code></p>
+<p>这时候，张三这个开发人员，就可以看到对应的项目了。</p>
+<p>下面张三就可以将修改后的代码推送到对应的远程库中</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004624.png"></p>
+<p>在上图中，执行了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push  https://github.com/wcw324/demo.git master</span><br></pre></td></tr></table></figure>
+
+<p>这样可以将张三修改的代码推送到<code>wcw324</code>这个开发人员所创建的远程库中。</p>
+<p>这时候，我们可以在<code>github</code>中查看<code>hello.txt</code>文件中的内容，发现都做了响应的修改。</p>
+<p>这时候，<code>wcw324</code>这个开发人员，可以将远程库中的最新代码拉取到本地，这样<code>wcw324</code>这个开发人员本地库中的代码就与远程库中的代码保持了一致。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/202408151004553.png"></p>
+<p>在上图中执行了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull demo master</span><br></pre></td></tr></table></figure>
+
+<p>从<code>demo</code>这个别名中拉取了最新的代码</p>
+<p>注意：这里一定是在<code>wcw324</code>这个开发人员对应的<code>git</code>客户端拉取代码。</p>
+<p>这样就完成了团队协作。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://www.kilgour.top">kilgour</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.kilgour.top/2024/08/15/%E8%80%81%E7%8E%8B-22%E3%80%81Git/">http://www.kilgour.top/2024/08/15/%E8%80%81%E7%8E%8B-22%E3%80%81Git/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.kilgour.top" target="_blank">Kilgour Notes</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/08/15/%E8%80%81%E7%8E%8B-23%E3%80%81WPF/" title=""><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover6.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2024/08/13/%E8%80%81%E7%8E%8B-21%E3%80%81Redis/" title=""><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.githubusercontent.com/kilg0ur/picture/master/picture/cover11.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/5.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">kilgour</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/kilg0ur"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git"><span class="toc-number">1.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">1、简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text">2、版本控制介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81Git%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="toc-number">4.</span> <span class="toc-text">3、Git工作机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E3%80%81Git%E5%AE%89%E8%A3%85"><span class="toc-number">5.</span> <span class="toc-text">4、Git安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E7%AD%BE%E5%90%8D"><span class="toc-number">6.</span> <span class="toc-text">5、设置用户签名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%AC%E5%9C%B0%E5%BA%93"><span class="toc-number">7.</span> <span class="toc-text">6、初始化本地库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7%E3%80%81%E6%9F%A5%E7%9C%8B%E6%9C%AC%E5%9C%B0%E5%BA%93%E7%8A%B6%E6%80%81"><span class="toc-number">8.</span> <span class="toc-text">7、查看本地库状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8%E3%80%81%E6%B7%BB%E5%8A%A0%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-number">9.</span> <span class="toc-text">8、添加暂存区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9%E3%80%81%E6%8F%90%E4%BA%A4%E6%9C%AC%E5%9C%B0%E5%BA%93"><span class="toc-number">10.</span> <span class="toc-text">9、提交本地库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10%E3%80%81%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6"><span class="toc-number">11.</span> <span class="toc-text">10、修改文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11%E3%80%81%E7%89%88%E6%9C%AC%E7%A9%BF%E6%A2%AD"><span class="toc-number">12.</span> <span class="toc-text">11、版本穿梭</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12%E3%80%81%E5%88%86%E6%94%AF%E6%A6%82%E8%BF%B0"><span class="toc-number">13.</span> <span class="toc-text">12、分支概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13%E3%80%81%E5%88%86%E6%94%AF%E7%9A%84%E6%9F%A5%E7%9C%8B%E3%80%81%E5%88%9B%E5%BB%BA%E3%80%81%E5%88%87%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">13、分支的查看、创建、切换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14%E3%80%81%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="toc-number">15.</span> <span class="toc-text">14、合并分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15%E3%80%81%E5%86%B2%E7%AA%81%E5%90%88%E5%B9%B6"><span class="toc-number">16.</span> <span class="toc-text">15、冲突合并</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16%E3%80%81%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="toc-number">17.</span> <span class="toc-text">16、团队协作机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#17%E3%80%81%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E5%BA%93"><span class="toc-number">18.</span> <span class="toc-text">17、创建远程库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#18%E3%80%81%E6%8E%A8%E9%80%81%E6%9C%AC%E5%9C%B0%E5%BA%93%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%BA%93"><span class="toc-number">19.</span> <span class="toc-text">18、推送本地库到远程库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#19%E3%80%81%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0%E5%BA%93"><span class="toc-number">20.</span> <span class="toc-text">19、拉取远程库到本地库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#20%E3%80%81%E5%85%8B%E9%9A%86%E8%BF%9C%E7%A8%8B%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">21.</span> <span class="toc-text">20、克隆远程库到本地</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21%E3%80%81%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C"><span class="toc-number">22.</span> <span class="toc-text">21、团队协作</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By kilgour</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">2</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><!-- hexo injector body_end end --></body></html>
